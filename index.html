@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Elit Diş Hekimliği - Gülüşünüz Bizim İşimiz</title>
+    <style>
+        /* Genel Stil */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #2a4365, #1e3a5f);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 48px;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        header p {
+            font-size: 20px;
+            margin: 10px 0 0;
+        }
+
+        /* Navigasyon */
+        nav {
+            background: #243c5a;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            color: white;
+            margin: 0 20px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+        /* Ana İçerik */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 36px;
+            color: #2a4365;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        /* Hizmetler */
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .service {
+            flex: 1 1 calc(33.333% - 40px);
+            background: #f4f4f4;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .service h3 {
+            font-size: 24px;
+            color: #2a4365;
+            margin-bottom: 10px;
+        }
+
+        /* Randevu Formu */
+        .appointment-form {
+            margin-top: 40px;
+        }
+
+        .appointment-form input,
+        .appointment-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .appointment-form button {
+            background: #2a4365;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .appointment-form button:hover {
+            background: #1e3a5f;
+        }
+
+        /* Footer */
+        footer {
+            background: #1e3a5f;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Elit Diş Hekimliği</h1>
+        <p>Gülüşünüz Bizim İşimiz</p>
+    </header>
+
+    <!-- Navigasyon -->
+    <nav>
+        <a href="#anasayfa">Ana Sayfa</a>
+        <a href="#hizmetler">Hizmetler</a>
+        <a href="#randevu">Randevu Al</a>
+        <a href="#iletisim">İletişim</a>
+    </nav>
+
+    <!-- Ana Sayfa -->
+    <section id="anasayfa" class="container">
+        <h2>Hoş Geldiniz!</h2>
+        <p>Elit Diş Hekimliği, modern teknolojiler ve uzman kadromuzla ağız ve diş sağlığınız için en iyi hizmeti sunar. Gülüşünüzü güvenle bize emanet edin.</p>
+    </section>
+
+    <!-- Hizmetler -->
+    <section id="hizmetler" class="container">
+        <h2>Hizmetlerimiz</h2>
+        <div class="services">
+            <div class="service">
+                <h3>İmplant</h3>
+                <p>Eksik dişlerinizi implantlarla tamamlayın, doğal görünüm ve işlevsellik kazanın.</p>
+            </div>
+            <div class="service">
+                <h3>Ortodonti</h3>
+                <p>Çapraşık dişlerinizi düzeltin, sağlıklı ve düzgün bir gülüşe kavuşun.</p>
+            </div>
+            <div class="service">
+                <h3>Beyazlatma</h3>
+                <p>Dişlerinizi profesyonel beyazlatma yöntemleriyle parlatın, gülüşünüzü öne çıkarın.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Randevu Formu -->
+    <section id="randevu" class="container">
+        <h2>Randevu Al</h2>
+        <form class="appointment-form">
+            <input type="text" placeholder="Adınız" required>
+            <input type="email" placeholder="E-posta Adresiniz" required>
+            <input type="tel" placeholder="Telefon Numaranız" required>
+            <textarea placeholder="Mesajınız" rows="5" required></textarea>
+            <button type="submit">Randevu Al</button>
+        </form>
+    </section>
+
+    <!-- İletişim -->
+    <section id="iletisim" class="container">
+        <h2>İletişim</h2>
+        <p>Bize ulaşmak için aşağıdaki bilgileri kullanabilirsiniz:</p>
+        <p><strong>Adres:</strong> Örnek Mahallesi, No: 123, İstanbul</p>
+        <p><strong>Telefon:</strong> +90 555 555 5555</p>
+        <p><strong>E-posta:</strong> info@elitdis.com</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Elit Diş Hekimliği. Tüm hakları saklıdır.</p>
+    </footer>
+</body>
+</html>
