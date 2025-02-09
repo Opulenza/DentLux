@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Elit Diş Hekimliği - Gülüşünüz Bizim İşimiz</title>
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
@@ -77,6 +80,14 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .container.show {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .content {
@@ -106,6 +117,22 @@
             font-weight: bold;
         }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const sections = document.querySelectorAll(".container");
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                    }
+                });
+            }, { threshold: 0.3 });
+            
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
 </head>
 <body>
     <header>
@@ -113,23 +140,21 @@
             <a href="#anasayfa">Ana Sayfa</a>
             <a href="#hakkinda">Hakkında</a>
             <a href="#randevu">Randevu Al</a>
-            <a href="iletisim.html" target="_blank">İletişim</a>
+            <a href="#iletisim">İletişim</a>
         </nav>
         <h1>Elit Diş Hekimliği</h1>
         <p>Gülüşünüz Bizim İşimiz</p>
         <img class="header-image" src="https://raw.githubusercontent.com/Opulenza/DentLux/9742a1789ee85aaba6b6eb03304fabcd13afee11/parkora-jimer-dis-klinik.jpg" alt="Elit Diş Hekimliği Kliniği">
     </header>
 
-    <div class="container" id="hakkinda">
-        <img class="side-image" src="https://raw.githubusercontent.com/Opulenza/DentLux/refs/heads/main/en-iyi-implant.jpg" alt="İmplant Tedavisi">
+    <div class="container" id="iletisim">
         <div class="content">
-            <h2>Hakkımızda</h2>
-            <p>Elit Diş Hekimliği, alanında uzman hekimleri ile en prestijli okullardan mezun olmuş, geniş tecrübesiyle hastalarına üst düzey sağlık hizmeti sunmaktadır.</p>
-            <p>Kliniğimizde, Avrupa ve Amerika’nın en iyi diş hekimliği fakültelerinden mezun olmuş uzmanlarımız görev yapmaktadır. Eğitim hayatları boyunca aldıkları ödüller ve uluslararası çapta katıldıkları kongrelerle sektörde lider konumda yer almaktadırlar.</p>
-            <p>Son teknoloji cihazlar ve yenilikçi tedavi yöntemleriyle, hastalarımıza en konforlu ve güvenli deneyimi sunmayı amaçlıyoruz. Diş estetiği, implant ve ortodonti alanlarında kişiye özel tedavi planları ile mükemmel sonuçlar elde ediyoruz.</p>
-            <p>Hijyen standartlarına en üst düzeyde önem veren kliniğimiz, sağlığınızı önceliklendirerek sizlere en iyi hizmeti sunmaya devam ediyor.</p>
+            <h2>İletişim</h2>
+            <p>📍 Adres: İstanbul, Şişli, Büyükdere Caddesi No:123</p>
+            <p>📞 Telefon: +90 212 555 55 55</p>
+            <p>📧 E-posta: info@elitdis.com</p>
+            <p>🕒 Çalışma Saatleri: Hafta içi 09:00 - 18:00 | Cumartesi 10:00 - 16:00</p>
         </div>
-        <img class="side-image" src="https://raw.githubusercontent.com/Opulenza/DentLux/refs/heads/main/ortodonti.png" alt="Ortodonti Tedavisi">
     </div>
 
     <footer class="footer">
