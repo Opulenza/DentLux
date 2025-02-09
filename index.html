@@ -147,14 +147,22 @@
         <img class="header-image" src="https://raw.githubusercontent.com/Opulenza/DentLux/9742a1789ee85aaba6b6eb03304fabcd13afee11/parkora-jimer-dis-klinik.jpg" alt="Elit Diş Hekimliği Kliniği">
     </header>
 
-    <div class="container" id="iletisim">
+    <div class="container" id="iletisim" style="display: none;">
         <div class="content">
-            <h2>İletişim</h2>
-            <p>📍 Adres: İstanbul, Şişli, Büyükdere Caddesi No:123</p>
-            <p>📞 Telefon: +90 212 555 55 55</p>
-            <p>📧 E-posta: info@elitdis.com</p>
-            <p>🕒 Çalışma Saatleri: Hafta içi 09:00 - 18:00 | Cumartesi 10:00 - 16:00</p>
+            <h2>Hakkımızda</h2>
+            <p>Elit Diş Hekimliği, alanında uzman hekimleri ile en prestijli okullardan mezun olmuş, geniş tecrübesiyle hastalarına üst düzey sağlık hizmeti sunmaktadır.</p>
+            <p>Kliniğimizde, Avrupa ve Amerika’nın en iyi diş hekimliği fakültelerinden mezun olmuş uzmanlarımız görev yapmaktadır. Eğitim hayatları boyunca aldıkları ödüller ve uluslararası çapta katıldıkları kongrelerle sektörde lider konumda yer almaktadırlar.</p>
+            <p>Son teknoloji cihazlar ve yenilikçi tedavi yöntemleriyle, hastalarımıza en konforlu ve güvenli deneyimi sunmayı amaçlıyoruz. Diş estetiği, implant ve ortodonti alanlarında kişiye özel tedavi planları ile mükemmel sonuçlar elde ediyoruz.</p>
+            <p>Hijyen standartlarına en üst düzeyde önem veren kliniğimiz, sağlığınızı önceliklendirerek sizlere en iyi hizmeti sunmaya devam ediyor.</p>
         </div>
+    </div>
+    <script>
+        document.querySelector('a[href="#iletisim"]').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('iletisim').style.display = 'block';
+            document.getElementById('iletisim').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
     </div>
 
     <footer class="footer">
