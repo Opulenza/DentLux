@@ -52,7 +52,7 @@
             width: 90%;
             max-width: 1200px;
             margin: 40px auto;
-            padding: 20px;
+            padding: 40px;
             background: white;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
@@ -71,6 +71,34 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             display: block;
             margin: 20px auto;
+        }
+
+        .service-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        .service-item {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            width: 30%;
+            margin: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .service-item:hover {
+            transform: translateY(-10px);
+        }
+        .service-item h3 {
+            color: #2a4365;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        .service-item p {
+            font-size: 16px;
+            color: #555;
         }
 
         footer {
@@ -104,10 +132,8 @@
 </head>
 <body>
     <header>
-        
         <h1>Elit Diş Hekimliği</h1>
         <p>Gülüşünüz Bizim İşimiz</p>
-        
         <img src="https://raw.githubusercontent.com/Opulenza/DentLux/refs/heads/main/parkora-jimer-dis-klinik.jpg" alt="İmplant Tedavisi" class="hero-image">
         <nav>
             <a href="#anasayfa">Ana Sayfa</a>
@@ -115,8 +141,26 @@
             <a href="#iletisim">İletişim</a>
         </nav>
     </header>
-    
-    
+
+    <section id="anasayfa" class="container active">
+        <h2>Hoş Geldiniz</h2>
+        <p>Elit Diş Hekimliği, modern teknolojiler ve uzman kadrosuyla ağız ve diş sağlığı hizmetlerinde öncü bir kuruluştur. Sağlıklı bir gülüş için bizi tercih edin.</p>
+        <div class="service-list">
+            <div class="service-item">
+                <h3>İmplant Tedavisi</h3>
+                <p>Eksik dişlerinizi kalıcı ve doğal bir şekilde tamamlayın.</p>
+            </div>
+            <div class="service-item">
+                <h3>Ortodonti</h3>
+                <p>Çapraşık dişlerinizi düzeltmek için modern ortodontik tedaviler.</p>
+            </div>
+            <div class="service-item">
+                <h3>Beyazlatma</h3>
+                <p>Profesyonel diş beyazlatma ile gülüşünüzü parlatın.</p>
+            </div>
+        </div>
+    </section>
+
     <section id="hakkinda" class="container">
         <h2>Hakkımızda</h2>
         <p>Elit Diş Hekimliği, alanında uzman hekimleri ile en prestijli okullardan mezun olmuş, geniş tecrübesiyle hastalarına üst düzey sağlık hizmeti sunmaktadır.</p>
