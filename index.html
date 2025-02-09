@@ -1,35 +1,45 @@
 <!DOCTYPE html>
 <html lang="tr">
-<!-- Header -->
-    <header>
-        <h1>Elit Diş Hekimliği</h1>
-        <p>Gülüşünüz Bizim İşimiz</p>
-        <img src="https://raw.githubusercontent.com/Opulenza/DentLux/9742a1789ee85aaba6b6eb03304fabcd13afee11/parkora-jimer-dis-klinik.jpg" alt="Diş Kliniği">
-    </header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Elit Diş Hekimliği - Gülüşünüz Bizim İşimiz</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #eef2f3;
+            color: #333;
+        }
+
         header {
             background: linear-gradient(135deg, #2a4365, #1e3a5f);
             color: white;
-            padding: 60px 20px;
+            padding: 60px 20px 20px;
             text-align: center;
+            position: relative;
         }
 
         header h1 {
-            font-size: 48px;
+            font-size: 50px;
             margin: 0;
             font-weight: bold;
         }
 
         header p {
-            font-size: 20px;
-            margin: 10px 0 0;
+            font-size: 22px;
+            margin: 10px 0 20px;
         }
 
-        /* Navigasyon */
         nav {
-            background: #243c5a;
-            padding: 15px;
+            background: transparent;
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         nav a {
@@ -38,105 +48,50 @@
             text-decoration: none;
             font-size: 18px;
             font-weight: bold;
-            transition: color 0.3s ease;
+            transition: color 0.3s ease, transform 0.2s ease;
         }
 
         nav a:hover {
             color: #ffcc00;
+            transform: scale(1.1);
         }
 
-        /* Ana İçerik */
+        .header-image {
+            max-width: 600px;
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 40px auto 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
         .container {
-            width: 90%;
             max-width: 1200px;
             margin: 40px auto;
             padding: 20px;
             background: white;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
             text-align: center;
-        }
-
-        h2 {
-            font-size: 36px;
-            color: #2a4365;
-            margin-bottom: 20px;
-        }
-
-        p {
-            font-size: 18px;
-            line-height: 1.6;
-        }
-
-        /* Hizmetler */
-        .services {
             display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 30px;
+            align-items: center;
+            justify-content: space-between;
         }
 
-        .service {
-            flex: 1 1 calc(33.333% - 40px);
-            background: #f4f4f4;
-            padding: 20px;
+        .content {
+            flex: 1;
+            text-align: center;
+        }
+
+        .side-image {
+            width: 150px;
+            height: auto;
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
-        .service:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-
-        .service h3 {
-            font-size: 24px;
-            color: #2a4365;
-            margin-bottom: 10px;
-        }
-
-        /* İmplant Resmi */
-        .service img {
-            width: 100%;
-            max-width: 280px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            margin-top: 15px;
-        }
-
-        /* Randevu Formu */
-        .appointment-form {
-            margin-top: 40px;
-        }
-
-        .appointment-form input,
-        .appointment-form textarea {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-
-        .appointment-form button {
-            background: #2a4365;
-            color: white;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .appointment-form button:hover {
-            background: #1e3a5f;
-        }
-
-        /* Footer */
-        footer {
+        .footer {
             background: #1e3a5f;
             color: white;
             text-align: center;
@@ -144,80 +99,42 @@
             margin-top: 40px;
         }
 
-        footer p {
-            margin: 0;
-            font-size: 16px;
+        .footer p {
+            margin: 5px 0;
+            font-size: 18px;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
+        <nav>
+            <a href="#anasayfa">Ana Sayfa</a>
+            <a href="#hizmetler">Hizmetler</a>
+            <a href="#randevu">Randevu Al</a>
+            <a href="#iletisim">İletişim</a>
+        </nav>
         <h1>Elit Diş Hekimliği</h1>
         <p>Gülüşünüz Bizim İşimiz</p>
+        <img class="header-image" src="https://raw.githubusercontent.com/Opulenza/DentLux/9742a1789ee85aaba6b6eb03304fabcd13afee11/parkora-jimer-dis-klinik.jpg" alt="Elit Diş Hekimliği Kliniği">
     </header>
 
-    <!-- Navigasyon -->
-    <nav>
-        <a href="#anasayfa">Ana Sayfa</a>
-        <a href="#hizmetler">Hizmetler</a>
-        <a href="#randevu">Randevu Al</a>
-        <a href="#iletisim">İletişim</a>
-    </nav>
-
-    <!-- Ana Sayfa -->
-    <section id="anasayfa" class="container">
-        <h2>Hoş Geldiniz!</h2>
-        <p>Elit Diş Hekimliği, modern teknolojiler ve uzman kadromuzla ağız ve diş sağlığınız için en iyi hizmeti sunar. Gülüşünüzü güvenle bize emanet edin.</p>
-    </section>
-
-    <!-- Hizmetler -->
-    <section id="hizmetler" class="container">
-        <h2>Hizmetlerimiz</h2>
-        <div class="services">
-            <div class="service">
-                <h3>İmplant</h3>
-                <p>Eksik dişlerinizi implantlarla tamamlayın, doğal görünüm  kazanın.</p>
-                <!-- İmplant Resmi Eklendi -->
-                <img src="https://raw.githubusercontent.com/Opulenza/DentLux/main/en-iyi-implant.jpg" alt="İmplant Tedavisi">
-            </div>
-            <div class="service">
-                <h3>Ortodonti</h3>
-                <p>Çapraşık dişlerinizi düzeltin, sağlıklı ve düzgün bir gülüşe kavuşun.</p>
-                <!-- Ortodonti Resmi Eklendi -->
-                <img src="https://raw.githubusercontent.com/Opulenza/DentLux/refs/heads/main/ortodonti.png" alt="Ortodonti Tedavisi">
-            </div>
-            <div class="service">
-                <h3>Beyazlatma</h3>
-                <p>Dişlerinizi profesyonel beyazlatma yöntemleriyle parlatın, gülüşünüzü öne çıkarın.</p>
-            </div>
+    <div class="container">
+        <img class="side-image" src="https://raw.githubusercontent.com/Opulenza/DentLux/refs/heads/main/en-iyi-implant.jpg" alt="İmplant Tedavisi">
+        <div class="content">
+            <h2>Neden Bizi Tercih Etmelisiniz?</h2>
+            <p>Son teknoloji ekipmanlarla donatılmış modern bir klinik ortamı sunuyoruz.</p>
+            <p>Alanında uzman, deneyimli ve güler yüzlü diş hekimlerimizle hizmet veriyoruz.</p>
+            <p>Kişiye özel tedavi planları ile en doğru çözümleri sunuyoruz.</p>
+            <p>Hijyen ve hasta konforunu en üst seviyede tutarak güvenli bir deneyim sağlıyoruz.</p>
+            <p>Estetik ve fonksiyonel çözümlerle sağlıklı ve özgüvenli gülüşler yaratıyoruz.</p>
         </div>
-    </section>
+        <img class="side-image" src="https://raw.githubusercontent.com/Opulenza/DentLux/refs/heads/main/ortodonti.png" alt="Ortodonti Tedavisi">
+    </div>
 
-    <!-- Randevu Formu -->
-    <section id="randevu" class="container">
-        <h2>Randevu Al</h2>
-        <form class="appointment-form">
-            <input type="text" placeholder="Adınız" required>
-            <input type="email" placeholder="E-posta Adresiniz" required>
-            <input type="tel" placeholder="Telefon Numaranız" required>
-            <textarea placeholder="Mesajınız" rows="5" required></textarea>
-            <button type="submit">Randevu Al</button>
-        </form>
-    </section>
-
-    <!-- İletişim -->
-    <section id="iletisim" class="container">
-        <h2>İletişim</h2>
-        <p>Bize ulaşmak için aşağıdaki bilgileri kullanabilirsiniz:</p>
-        <p><strong>Adres:</strong> Örnek Mahallesi, No: 123, İstanbul</p>
-        <p><strong>Telefon:</strong> +90 555 555 5555</p>
-        <p><strong>E-posta:</strong> info@elitdis.com</p>
-    </section>
-
-    <!-- Footer -->
-    <footer>
+    <footer class="footer">
         <p>&copy; 2025 Elit Diş Hekimliği. Tüm hakları saklıdır.</p>
+        <p style="font-size: 22px; font-weight: bold;">"Sağlıklı gülüşler, mutlu hayatların anahtarıdır."</p>
     </footer>
 </body>
 </html>
