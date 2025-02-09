@@ -51,13 +51,30 @@
             color: #ffcc00;
         }
 
+        .hero-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
         .hero-image {
             width: 100%;
             max-width: 600px;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             display: block;
-            margin: 20px auto 0;
+            margin: 0 auto;
+        }
+
+        .image-caption {
+            font-size: 20px;
+            color: white;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .highlight {
+            color: white;
+            font-weight: bold;
         }
 
         .container {
@@ -114,12 +131,15 @@
             <a href="#hakkinda">Hakkında</a>
             <a href="#iletisim">İletişim</a>
         </nav>
-        <img src="https://raw.githubusercontent.com/Opulenza/DentLux/refs/heads/main/parkora-jimer-dis-klinik.jpg" alt="İmplant Tedavisi" class="hero-image">
+        <div class="hero-container">
+            <img src="https://raw.githubusercontent.com/Opulenza/DentLux/refs/heads/main/parkora-jimer-dis-klinik.jpg" alt="İmplant Tedavisi" class="hero-image">
+            <p class="image-caption"><span class="highlight">Ortodonti</span> | <span class="highlight">Diş Beyazlatma</span> | <span class="highlight">İmplant Tedavisi</span></p>
+        </div>
     </header>
 
     <section id="anasayfa" class="container active">
         <h2>Hoş Geldiniz</h2>
-        <p>Elit Diş Hekimliği, modern teknolojiler ve uzman kadrosuyla ağız ve diş sağlığı hizmetlerinde öncü bir kuruluştur. Sağlıklı bir gülüş için bizi tercih edin.</p>
+        <p>Elit Diş Hekimliği, estetik ve fonksiyonelliği bir araya getirerek, en güncel teknoloji ve uzman kadrosu ile ağız ve diş sağlığınızı en üst seviyeye taşır. Sağlıklı, estetik ve güven dolu bir gülümseme için bizimle tanışın.</p>
     </section>
 
     <section id="hakkinda" class="container">
