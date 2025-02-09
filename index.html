@@ -6,9 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Elit Diş Hekimliği - Gülüşünüz Bizim İşimiz</title>
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
@@ -20,118 +17,80 @@
         header {
             background: linear-gradient(135deg, #2a4365, #1e3a5f);
             color: white;
-            padding: 60px 20px 20px;
+            padding: 60px 20px;
             text-align: center;
-            position: relative;
         }
-
         header h1 {
             font-size: 50px;
             margin: 0;
             font-weight: bold;
         }
-
         header p {
             font-size: 22px;
             margin: 10px 0 20px;
         }
 
         nav {
-            background: transparent;
-            position: absolute;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
+            background: #243c5a;
+            padding: 15px;
             text-align: center;
         }
-
         nav a {
             color: white;
             margin: 0 20px;
             text-decoration: none;
             font-size: 18px;
             font-weight: bold;
-            transition: color 0.3s ease, transform 0.2s ease;
+            transition: color 0.3s ease;
+            cursor: pointer;
         }
-
         nav a:hover {
             color: #ffcc00;
-            transform: scale(1.1);
-        }
-
-        .header-image {
-            max-width: 600px;
-            width: 100%;
-            height: auto;
-            display: block;
-            margin: 40px auto 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
         .container {
+            width: 90%;
             max-width: 1200px;
             margin: 40px auto;
             padding: 20px;
             background: white;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
             text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 1s ease, transform 1s ease;
+            display: none;
+            position: relative;
+        }
+        .active {
+            display: block;
         }
 
-        .container.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .content {
-            flex: 1;
-            text-align: center;
-            padding: 0 30px;
-        }
-
-        .side-image {
-            width: 250px;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .footer {
+        footer {
             background: #1e3a5f;
             color: white;
             text-align: center;
             padding: 20px;
             margin-top: 40px;
         }
-
-        .footer p {
-            margin: 5px 0;
-            font-size: 18px;
-            font-weight: bold;
-        }
     </style>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const sections = document.querySelectorAll(".container");
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("show");
-                    }
+        document.addEventListener("DOMContentLoaded", function () {
+            showSection('anasayfa');
+            const navLinks = document.querySelectorAll("nav a");
+            navLinks.forEach(function (link) {
+                link.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    const targetId = this.getAttribute("href").substring(1);
+                    showSection(targetId);
                 });
-            }, { threshold: 0.3 });
-            
-            sections.forEach(section => {
-                observer.observe(section);
             });
         });
+
+        function showSection(sectionId) {
+            document.querySelectorAll('.container').forEach(function (section) {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
     </script>
 </head>
 <body>
@@ -139,35 +98,33 @@
         <nav>
             <a href="#anasayfa">Ana Sayfa</a>
             <a href="#hakkinda">Hakkında</a>
-            <a href="#randevu">Randevu Al</a>
             <a href="#iletisim">İletişim</a>
         </nav>
         <h1>Elit Diş Hekimliği</h1>
         <p>Gülüşünüz Bizim İşimiz</p>
-        <img class="header-image" src="https://raw.githubusercontent.com/Opulenza/DentLux/9742a1789ee85aaba6b6eb03304fabcd13afee11/parkora-jimer-dis-klinik.jpg" alt="Elit Diş Hekimliği Kliniği">
     </header>
 
-    <div class="container" id="iletisim" style="display: none;">
-        <div class="content">
-            <h2>Hakkımızda</h2>
-            <p>Elit Diş Hekimliği, alanında uzman hekimleri ile en prestijli okullardan mezun olmuş, geniş tecrübesiyle hastalarına üst düzey sağlık hizmeti sunmaktadır.</p>
-            <p>Kliniğimizde, Avrupa ve Amerika’nın en iyi diş hekimliği fakültelerinden mezun olmuş uzmanlarımız görev yapmaktadır. Eğitim hayatları boyunca aldıkları ödüller ve uluslararası çapta katıldıkları kongrelerle sektörde lider konumda yer almaktadırlar.</p>
-            <p>Son teknoloji cihazlar ve yenilikçi tedavi yöntemleriyle, hastalarımıza en konforlu ve güvenli deneyimi sunmayı amaçlıyoruz. Diş estetiği, implant ve ortodonti alanlarında kişiye özel tedavi planları ile mükemmel sonuçlar elde ediyoruz.</p>
-            <p>Hijyen standartlarına en üst düzeyde önem veren kliniğimiz, sağlığınızı önceliklendirerek sizlere en iyi hizmeti sunmaya devam ediyor.</p>
-        </div>
-    </div>
-    <script>
-        document.querySelector('a[href="#iletisim"]').addEventListener('click', function(event) {
-            event.preventDefault();
-            document.getElementById('iletisim').style.display = 'block';
-            document.getElementById('iletisim').scrollIntoView({ behavior: 'smooth' });
-        });
-    </script>
-    </div>
+    <section id="anasayfa" class="container active">
+        <h2>Hoş Geldiniz</h2>
+        <p>Elit Diş Hekimliği'ne hoş geldiniz. Sağlıklı gülüşler için buradayız.</p>
+    </section>
 
-    <footer class="footer">
+    <section id="hakkinda" class="container">
+        <h2>Hakkımızda</h2>
+        <p>Elit Diş Hekimliği, alanında uzman hekimleri ile en prestijli okullardan mezun olmuş, geniş tecrübesiyle hastalarına üst düzey sağlık hizmeti sunmaktadır.</p>
+        <p>Kliniğimizde, Avrupa ve Amerika’nın en iyi diş hekimliği fakültelerinden mezun olmuş uzmanlarımız görev yapmaktadır.</p>
+    </section>
+
+    <section id="iletisim" class="container">
+        <h2>İletişim</h2>
+        <p>📍 Adres: İstanbul, Şişli, Büyükdere Caddesi No:123</p>
+        <p>📞 Telefon: +90 212 555 55 55</p>
+        <p>📧 E-posta: info@elitdis.com</p>
+        <p>🕒 Çalışma Saatleri: Hafta içi 09:00 - 18:00 | Cumartesi 10:00 - 16:00</p>
+    </section>
+
+    <footer>
         <p>&copy; 2025 Elit Diş Hekimliği. Tüm hakları saklıdır.</p>
-        <p style="font-size: 22px; font-weight: bold;">"Sağlıklı gülüşler, mutlu hayatların anahtarıdır."</p>
     </footer>
 </body>
 </html>
